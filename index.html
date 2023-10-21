@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <!-- Link Style Css  -->
+    <link rel="stylesheet" href="css/style.css">
+    <!--BoxIcon Labrary  -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body >
+    <div id="opacity-layer-ele"></div>
+    <div class="side-bar">
+        <div class="brand-name">
+            <i class='bx bxl-internet-explorer'></i>
+            <h1>Brand Name</h1>
+        </div>
+        <ul class="nav-menu">
+           <li class="active">
+               <a href="#">
+                    <i class='bx bxs-dashboard'></i>
+                    <span>Dashboard</span>
+               </a>
+           </li>
+           <li>
+               <a href="#">
+                    <i class='bx bxs-shopping-bag' ></i>
+                    <span>Products</span>
+               </a>
+           </li>
+           <li>
+               <a href="#">
+                    <i class='bx bxs-basket'></i>
+                    <span>Orders</span>
+               </a>
+           </li>
+           <li>
+               <a href="#">
+                    <i class='bx bxs-bar-chart-alt-2'></i>
+                    <span>Reports</span>
+               </a>
+           </li>
+           <li>
+               <a href="#">
+                    <i class='bx bxs-help-circle' ></i>
+                    <span>Get Help</span>
+               </a>
+           </li>
+           <li>
+               <a href="#">
+                    <i class='bx bxs-cog' ></i>
+                    <span>Settings</span>
+               </a>
+           </li>
+        </ul>
+        <div class="profil-info">
+              <img src="images/Houssem Profile.jpg" alt="Profile Picture" class="picture">
+              <p>Welcome Back,</p>
+              <p>Houssem Chaouch</p>
+        </div>
+        <div class="log-out">
+            <i class='bx bx-log-out' ></i>
+            <p>Log Out</p>
+        </div>
+    </div>
+    <div class="content">
+        <div class="nav-bar">
+            <div class="nav-title">
+                <h2>Dashboard</h2>
+                <p>All Inforamtion about your store</p>
+            </div>
+            <div class="search-input">
+                <i class='bx bx-search' ></i>
+                <input type="text" placeholder="Search">
+            </div>
+            <div class="notif">
+                <i class='bx bx-adjust mode-btn '></i>
+                <i class='bx bxs-bell notif-icon' ></i>
+                <img src="images/Houssem Profile.jpg" alt="Profile Picture" class="picture" id="profileIcon">
+            </div>
+            <ul class="menu" id="menu-list">
+                <li><a href="#"><i class='bx bxs-user'></i>Edit Profile</a></li>
+                <li><a href="#"><i class='bx bxs-message-alt-detail'></i>Messanger</a></li>
+                <li><a href="#"><i class='bx bxs-cog'></i>Settings & Privacy</a></li>
+                <li><a href="#"><i class='bx bxs-brightness-half'></i></i>Display & Accessibilty</a></li>
+              </ul>
+        </div>
+        <div class="boxes-stat">
+            <div class="box sell">
+                  <div class="icon">
+                    <i class='bx bxs-shopping-bag'></i>
+                  </div>
+                  <div class="info-text">
+                      <p>Today Sell</p>
+                      <p><span>$2,300</span> ( +12% )</p>
+                  </div>
+            </div>
+            <div class="box order">
+                  <div class="icon">
+                    <i class='bx bxs-purchase-tag'></i>
+                  </div>
+                  <div class="info-text">
+                      <p>Today Orders</p>
+                      <p><span>200</span> ( +12% )</p>
+                  </div>
+            </div>
+            <div class="box visitor">
+                  <div class="icon">
+                    <i class='bx bxs-user'></i>
+                  </div>
+                  <div class="info-text">
+                      <p>Today Visitor</p>
+                      <p><span>5,354</span> ( +12% )</p>
+                  </div>
+            </div>
+            <div class="box revenus">
+                  <div class="icon">
+                    <i class='bx bxs-bar-chart-alt-2'></i>
+                  </div>
+                  <div class="info-text">
+                      <p>Today Revenus</p>
+                      <p><span>$365</span> ( +12% )</p>
+                  </div>
+            </div>
+        </div>
+        <div class="stats-section">
+            <div class="overview-stat">
+               <h3>Overview Statistic</h3>
+               <div class="period-bar-stat">
+                  <ul class="period">
+                    <li><a href="#">Today</a></li>
+                    <li class="active"><a href="#">Weekly</a></li>
+                    <li><a href="#">Monthly</a></li>
+                    <li><a href="#">Last Year</a></li>
+                  </ul>
+                  <ul class="sales">
+                     <li class="active"><a href="#">Sales</a></li>
+                     <li><a href="#">Order</a></li>
+                     <li><a href="#">Revenue</a></li>
+                  </ul>
+               </div>
+               <canvas id="chart-bar">
+
+               </canvas>
+            </div>
+            <div class="transaction-hist">
+                <h3 class="title-trans">Transaction History</h3>
+                <ul class="user-trans">
+                    <li class="line-info">
+                        <div class="text">
+                            <img src="images/Houssem Profile.jpg" alt="" class="picture" >
+                            <div class="info">
+                                <p>Houssem Chaouch</p>
+                                <p>2 Minutes Ago</p>
+                            </div>
+                        </div>
+                        <h4>$1545.00</h4>
+                    </li>
+                    <li class="line-info active">
+                        <div class="text">
+                            <img src="images/Houssem Profile.jpg" alt="" class="picture" >
+                            <div class="info">
+                                <p >Houssem Chaouch</p >
+                                <p>2 Minutes Ago</p>
+                            </div>
+                        </div>
+                        <h4>$1545.00</h4>
+                    </li>
+                    <li class="line-info">
+                        <div class="text">
+                            <img src="images/Houssem Profile.jpg" alt="" class="picture">
+                            <div class="info">
+                                <p>Houssem Chaouch</p>
+                                <p>2 Minutes Ago</p>
+                            </div>
+                        </div>
+                        <h4>$1545.00</h4>
+                    </li>
+                    <li class="line-info">
+                        <div class="text">
+                            <img src="images/Houssem Profile.jpg" alt="" class="picture" >
+                            <div class="info">
+                                <p>Houssem Chaouch</p>
+                                <p>2 Minutes Ago</p>
+                            </div>
+                        </div>
+                        <h4>$1545.00</h4>
+                    </li>
+                    <li class="line-info">
+                        <div class="text">
+                            <img src="images/Houssem Profile.jpg" alt="" class="picture">
+                            <div class="info">
+                                <p>Houssem Chaouch</p>
+                                <p>2 Minutes Ago</p>
+                            </div>
+                        </div>
+                        <h4>$1545.00</h4>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="prosuct-stat-section">
+            <div class="prd-stat-graph">
+                <h3>Product Status</h3>
+                <canvas id="secteurChart">
+
+                </canvas>
+            </div>
+            <div class="recent-order">
+                <h3>Recent Order</h3>
+                <table>
+                    <thead>
+                          <tr>
+                            <th></th>
+                            <th>Product</th>
+                            <th>Customer</th>
+                            <th>Product Code</th>
+                            <th>Price</th>
+                            <th>Status</th>
+                          </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <img src="images/Googlenestmini-removebg-preview.png" alt="" width="30px">
+                            </td>
+                            <td>Google Nrst Mini</td>
+                            <td>Carts</td>
+                            <td>46546-Om</td>
+                            <td>$545</td>
+                            <td class="delivered">Delivered</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="images/Googlenestmini-removebg-preview.png" alt="" width="30px">
+                            </td>
+                            <td>Google Nrst Mini</td>
+                            <td>Carts</td>
+                            <td>46546-Om</td>
+                            <td>$545</td>
+                            <td class="delivered">Delivered</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="images/Googlenestmini-removebg-preview.png" alt="" width="30px">
+                            </td>
+                            <td>Google Nrst Mini</td>
+                            <td>Carts</td>
+                            <td>46546-Om</td>
+                            <td>$545</td>
+                            <td class="pending">Pending</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="images/Googlenestmini-removebg-preview.png" alt="" width="30px">
+                            </td>
+                            <td>Google Nrst Mini</td>
+                            <td>Carts</td>
+                            <td>46546-Om</td>
+                            <td>$545</td>
+                            <td class="delivered">Delivered</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="images/Googlenestmini-removebg-preview.png" alt="" width="30px">
+                            </td>
+                            <td>Google Nrst Mini</td>
+                            <td>Carts</td>
+                            <td>46546-Om</td>
+                            <td>$545</td>
+                            <td class="pending">Pending</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
