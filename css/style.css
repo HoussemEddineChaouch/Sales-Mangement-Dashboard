@@ -165,7 +165,7 @@ ul {
     top: 0;
     left: 260px;
 }
-@media (max-width : 776px) {
+@media (max-width : 767px) {
     .content {
         width: calc(100% - 50px);
         left: 50px;
